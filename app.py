@@ -23,7 +23,11 @@ def index():
     return render_template('index.html')
 
 @app.route('/favicon.png')
-def favicon():
+def favicon_png():
+    return send_from_directory(app.static_folder, 'favicon.png', mimetype='image/png')
+
+@app.route('/favicon.ico')
+def favicon_ico():
     return send_from_directory(app.static_folder, 'favicon.png', mimetype='image/png')
 
 @app.route('/logo.png')
